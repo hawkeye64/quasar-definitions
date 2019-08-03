@@ -63,3 +63,24 @@ The schema is in object format with named keys. Almost everything is optional.
   }
 }
 ```
+
+### Example
+
+```js
+{
+  QTabs: {
+    tag: 'q-tabs',
+    legacy: {
+      methods: ['go', 'next', 'previous', 'selectTab'],
+      events: ['select'],
+      props: ['animated', 'color', 'glossy', 'inverted', 'panes-container-class', 'position', 'swipeable', 'text-color', 'two-line', 'underline-color', 'no-pane-border'],
+      slots: ['title'],
+      propChanges: {
+        'underline-color': {
+          replaceWith: 'indicator-color'
+        }
+      }
+    }
+  }
+}
+```
