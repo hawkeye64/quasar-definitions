@@ -12,6 +12,54 @@ These two concerns will then be merged into a finalized singularity which will/c
 
 Help is appreciated in maintaining and/or double-checking consistency, spelling mistakes, and correctness.
 
-TODO: need a schema (currently it has been ad-hoc, but I have tried to be consistent)
-
 Discussions can be done in the Issues area.
+
+## Schema
+
+The schema is in object format with named keys. Almost everything is optional.
+
+**TODO:** Currently, this schema is for the legacy objects. It will be updated to include the `current` definitions as well.
+
+```js
+{
+  name: {
+    tag: 'String | Optional | The kebab-case version of the name',
+    replaceWith: 'String | Optional | The replacement for `name`',
+    message: 'String | Optional | Optional message that may be displayed (ie: eslint)',
+    legacy: {
+      props: 'Array of strings | Optional | Array of legacy properties no longer applicable',
+      events: 'Array of strings | Optional | Array of legacy events no longer applicable',
+      methods: 'Array of strings | Optional | Array of legacy methods no longer applicable',
+      slots: 'Array of strings | Optional | Array of legacy slots no longer applicable',
+      propChanges: {
+        name: {
+          replacedWith: 'String | Optional | the property replacement for `name`'
+          previousType: 'String | Optional | the previous `type` of `name`
+          currentType: 'String | Optional | the current `type` of `name`
+        }
+      },
+      eventChanges: {
+        name: {
+          replacedWith: 'String | Optional | the event replacement for `name`'
+          previousType: 'String | Optional | the previous `type` of `name`
+          currentType: 'String | Optional | the current `type` of `name`
+        }
+      }
+      methodChanges: {
+        name: {
+          replacedWith: 'String | Optional | the method replacement for `name`'
+          previousType: 'String | Optional | the previous `type` of `name`
+          currentType: 'String | Optional | the current `type` of `name`
+        }
+      }
+      slotChanges: {
+        name: {
+          replacedWith: 'String | Optional | the slot replacement for `name`'
+          previousType: 'String | Optional | the previous `type` of `name`
+          currentType: 'String | Optional | the current `type` of `name`
+        }
+      }
+    }
+  }
+}
+```
